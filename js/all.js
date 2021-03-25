@@ -22,10 +22,12 @@ let filterData = dataArray;
 axios.get('https://raw.githubusercontent.com/hexschool/js-training/main/travelApi.json')
   .then(function (response) {
     console.log('資料有回傳了');  
-    // console.log(response.data.data);
     dataArray = response.data.data;
-    // console.log(dataArray);
     showTicket(dataArray);
+  
+  })
+  .catch(function (error) {
+    console.log(error);
   });
 //#endregion
 
